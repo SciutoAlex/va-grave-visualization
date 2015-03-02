@@ -322,7 +322,7 @@ function loaded(err, data) {
     d3.selectAll('.text')
     highlight.filter(filterBasedOnWar).transition().duration(1000).delay(500)
       .style('stroke', c)
-      .style('stroke-width', function(d) {
+      .style('stroke-width', function(d) { 
           return volumeScale(d[warToHighlight]);
       })
       .style('stroke-opacity', .8);
