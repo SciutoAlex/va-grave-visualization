@@ -1,0 +1,40 @@
+
+
+html {
+  font-family:arial;
+}
+.container {
+  max-width: 1100px;
+  margin:0px auto;
+}
+
+
+.axis-year {
+
+  > path {
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
+  }
+
+  line {
+    stroke:black;
+  }
+}
+.war-labels text {
+  fill:#fff;
+  font-size:12px;
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+
+.brush {
+  .background {
+    fill:#ddd;
+    visibility:block;
+  }
+  .extent {
+    fill:red;
+  }
+}
