@@ -88,12 +88,12 @@ var bottomyYearAxis = topLayer.append('g')
 
 async.series({
   burials : function(cb) {
-    d3.tsv("/scripts/processed-tenyears.tsv", function(err,data) {
+    d3.tsv("./scripts/processed-tenyears.tsv", function(err,data) {
       cb(err,data);
     });
   },
   wars : function(cb) {
-    d3.tsv("/scripts/us-wars.txt", function(err,data) {
+    d3.tsv("./scripts/us-wars.txt", function(err,data) {
       cb(err,data);
     });
   }
@@ -190,12 +190,12 @@ function loaded(err, data) {
     .enter()
     .append('g')
     .attr('transform', function(d) {
-      var offset = yearScale(dateFormat.parse(d.start)) + .5*(yearScale(dateFormat.parse(d.end))-yearScale(dateFormat.parse(d.start)));
+      var offset = yearScale(dateFormat.parse(d.start)) + 0.5*(yearScale(dateFormat.parse(d.end))-yearScale(dateFormat.parse(d.start)));
       return "translate("+offset+","+stringsStart+")"
     })
 
     warsContainers.append('rect')
-    .attr('x', function(d) { return -.5*(yearScale(dateFormat.parse(d.end))-yearScale(dateFormat.parse(d.start)))})
+    .attr('x', function(d) { return -0.5*(yearScale(dateFormat.parse(d.end))-yearScale(dateFormat.parse(d.start)))})
     .attr('width', function(d) { return yearScale(dateFormat.parse(d.end))-yearScale(dateFormat.parse(d.start))})
     .attr('y', 0)
     .style('stroke', '#eee')
@@ -223,7 +223,7 @@ function loaded(err, data) {
     })
     .style('fill', 'none')
     .style('stroke-opacity', function(d) {
-      return .08
+      return 0.08
     });
 
 
