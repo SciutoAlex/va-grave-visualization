@@ -238,7 +238,7 @@ function loaded(err, data) {
       .attr('data-years', function(d) {
         return d.birth + "-" + d.death;
       })
-      .style('stroke', '#97390a')
+      .style('stroke', '#ff4c00')
       .style('stroke-width', function(d) {
           return volumeScale(d[warToHighlight]);
       })
@@ -330,12 +330,12 @@ function loaded(err, data) {
 
   function updateBrush(spanArray) {
 
-    highlight.transition().duration(1000).style('stroke-opacity', 0).style('stroke-width', 0).style('stroke', '#97390a' );
+    highlight.transition().duration(1000).style('stroke-opacity', 0).style('stroke-width', 0).style('stroke', '#ff4c00' );
     highlight.filter(filterBasedOnTime(spanArray)).transition().duration(1000).delay(1000)
       .style('stroke-width', function(d) {
           return volumeScale(d.total);
       })
-      .style('stroke-opacity', .4);
+      .style('stroke-opacity', 0.8);
   }
 
   function filterBasedOnWar(d) {
